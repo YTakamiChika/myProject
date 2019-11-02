@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这是一个计时器测试页面</title>
+    <style>
+        time_content{
+            margin-top: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="time_content">这是一个计时器</div>
+    <button onclick="fnStart()">开始</button>
+    <button onclick="fnPause()" class="pause">暂停</button>
+    <button onclick="fnEnd()">结束</button>
+    <div id="number">0</div>
+</body>
+<script type="text/javascript" src="./time_correct.js"></script>
+<script>
+    var time_correct = new TimeCorrect();
+    var ispause = false;
+    var isstart = false;
+
+    //开始
+    function fnStart() {
+        if(!isstart){
+            time_correct.setInterval(function(){
+                console.log(2222)
+                document.getElementById('number').innerHTML++;
+            },1000);
+            isstart = true;
+        }else{
+            if(ispause){
+                time_correct.begin(function(){
+                    document.getElementById('number').innerHTML++;
+                },1000);
+                ispause = false;
+            }
+        }
+
+    }
+
+    //暂停
+    function fnPause() {
+        if(isstart && !ispause){
+            time_correct.stop();
+            ispause = true;
+        }
+    }
+
+    //结束
+    function fnEnd() {
+        if(isstart && !ispause){
+            time_correct.stop();
+            document.getElementById('number').innerHTML = 0;
+            ispause = true;
+        }
+    }
+</script>
+</html>
