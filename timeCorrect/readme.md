@@ -41,6 +41,7 @@
   参数：无
   
   示例代码：
+  
        var time_correct = new TimeCorrect();
        time_correct.begin();
   
@@ -49,6 +50,7 @@
   参数：无
     
   示例代码：
+  
        var time_correct = new TimeCorrect();
        time_correct.stop();
   
