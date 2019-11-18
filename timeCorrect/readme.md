@@ -30,6 +30,7 @@
         默认值：无（必传）
 
   示例代码：
+  
        var time_correct = new TimeCorrect();
        time_correct.setInterval(function(){
                 
@@ -40,6 +41,7 @@
   参数：无
   
   示例代码：
+  
        var time_correct = new TimeCorrect();
        time_correct.begin();
   
@@ -48,6 +50,7 @@
   参数：无
     
   示例代码：
+  
        var time_correct = new TimeCorrect();
        time_correct.stop();
   
